@@ -15,7 +15,7 @@ export const ScreenSets= {
     Profile:{screenSet:"Default-ProfileUpdate", startScreen:'gigya-update-profile-screen'},
     Register:{screenSet:"Default-RegistrationLogin", startScreen:'gigya-register-screen'},
     Login:{screenSet:"Default-RegistrationLogin", startScreen:'gigya-login-screen'},
-    Lite:{screenSet:"Default-RegistrationLogin", startScreen:'gigya-login-screen'}
+    Lite:{screenSet:"Default-LiteRegistration" }
 }
 
 export const Profile = () => {

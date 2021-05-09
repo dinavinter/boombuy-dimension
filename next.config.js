@@ -3,7 +3,7 @@ const glob = require('glob')
 
 
 module.exports = {
-    assetPrefix: !process.env.NODE_ENV!=='production' ? '/boombuy-dimension/' : '',
+    // assetPrefix: !process.env.NODE_ENV!=='production' ? '/boombuy-dimension/' : '',
  
     webpack: (config, {dev}) => {
         config.module.rules.push(
