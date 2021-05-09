@@ -1,16 +1,11 @@
 const path = require('path')
 const glob = require('glob')
-const debug = process.env.NODE_ENV !== "production";
 
+const debug = process.env.NODE_ENV !== 'production'
 
 module.exports = {
-    exportPathMap: function(defaultPathMap) {
-        return {
-            '/': { page: '/' }
-        }
-    },
-    assetPrefix: debug ?   '':  '/boombuy-dimension/',
- 
+    assetPrefix: !debug ? '/boombuy-dimension' : '',
+  
     webpack: (config, {dev}) => {
         config.module.rules.push(
             {
@@ -41,14 +36,8 @@ module.exports = {
             }
         );
 
-        config.module.rules = config.module.rules.map(rule => {
-            if(rule.loader === 'babel-loader') {
-                rule.options.cacheDirectory = false
-            }
-            return rule
-        });
-
+  
         return config
     }
-   
+
 }

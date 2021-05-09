@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-dimension",
+  "name": "boombuy-dimension",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,8 +15,8 @@
     "export": "next export",
     "prestart": "npm run export",
     "start": "serve out",
-    "clean": "rimraf node_modules/.cache .cache out",
-    "touchnojekyll": "fsutil file createnew out/.nojekyll 0", 
+    "clean": "rimraf node_modules/.cache out",
+    "touchnojekyll": "fsutil file createnew out/.nojekyll 0",
     "deploy": "npm run clean && next build && next export && npm run touchnojekyll && gh-pages -d out -t true"
  
   },

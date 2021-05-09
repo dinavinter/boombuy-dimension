@@ -1,25 +1,14 @@
-const env = require('./env.config')
+
+const env = require('./env-config.js')
 
 module.exports = {
   presets: ['next/babel'],
-  plugins: [
-    [
-      "module-resolver", {
-      "root": ["."],
-      "alias": {
-        "styles": "./styles"
-      },
-      "cwd": "babelrc"
-    }],
+  plugins: [['transform-define', env],
+
     [
       "wrap-in-js",
       {
         "extensions": ["css$", "scss$"]
       }
-    ]
-    ,
-    ['transform-define', env]
-  ]
+    ]],
 }
-
-
