@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 const Footer = (props) => (
     <footer id="footer" style={props.timeout ? {display: 'none'} : {}}>
         <p className="copyright">&copy; Next.js Starter - Dimension. Design: <a href="https://html5up.net">HTML5 UP</a>. Built with: <a href="https://github.com/zeit/next.js">Next.js</a>
-            released for free under the <a href="https://html5up.net/license">Creative Commons</a> license.</p>
+            released for free under the <a href="https://html5up.net/license">Creative Commons</a> license.
+            based on <a href="https://github.com/codebushi/nextjs-starter-dimension.git">nextjs-starter-dimension</a>
+        </p>
      
     </footer>
 )
