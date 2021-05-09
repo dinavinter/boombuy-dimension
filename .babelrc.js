@@ -1,6 +1,6 @@
-// const env = {
-//   'process.env.BACKEND_URL': process.env.NODE_ENV === 'production' ? '/boombuy-dimension' : '',
-// }
+const env = {
+  'process.env.BACKEND_URL': process.env.NODE_ENV === 'production' ? '/boombuy-dimension' : '',
+}
 
 module.exports = {
   presets: ['next/babel'],
@@ -19,8 +19,8 @@ module.exports = {
         "extensions": ["css$", "scss$"]
       }
     ]
-    // ,
-    // ['transform-define', env]
+    ,
+    ['transform-define', env]
   ]
 }
 

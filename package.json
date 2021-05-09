@@ -15,8 +15,10 @@
     "export": "next export",
     "prestart": "npm run export",
     "start": "serve out",
-    "clean": "rimraf .cache out", 
-    "deploy": "npm run clean && next build  && next export && gh-pages -d out"
+    "clean": "rimraf node_modules/.cache .cache out",
+    "touchnojekyll": "fsutil file createnew out/.nojekyll 0", 
+    "deploy": "npm run clean && next build && next export && npm run touchnojekyll && gh-pages -d out -t true"
+ 
   },
   "keywords": [],
   "author": "",
@@ -42,6 +44,8 @@
     "sass-loader": "^7.1.0"
   },
   "devDependencies": {
+    "rimraf": "^3.0.0",
+    "babel-plugin-transform-define": "^1.3.2", 
     "gh-pages": "^2.2.0"
   }
 }
