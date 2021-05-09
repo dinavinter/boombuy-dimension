@@ -1053,7 +1053,7 @@ function Bar(_ref) {
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavLink"], {
-    href: "/#/",
+    href: "javascript:;",
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -1068,7 +1068,7 @@ function Bar(_ref) {
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavLink"], {
-    href: "/#/",
+    href: "javascript:;",
     onClick: function onClick(e) {
       return openScreen(_gigya__WEBPACK_IMPORTED_MODULE_4__["ScreenSets"].Lite);
     },
@@ -1093,7 +1093,7 @@ function Bar(_ref) {
       columnNumber: 21
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavLink"], {
-    href: "/#/",
+    href: "javascript:;",
     onClick: function onClick(e) {
       return openScreen(_gigya__WEBPACK_IMPORTED_MODULE_4__["ScreenSets"].Login);
     },
@@ -1118,7 +1118,7 @@ function Bar(_ref) {
       columnNumber: 21
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavLink"], {
-    href: "/#/",
+    href: "javascript:;",
     onClick: function onClick(e) {
       return openScreen(_gigya__WEBPACK_IMPORTED_MODULE_4__["ScreenSets"].Profile);
     },
@@ -1143,7 +1143,7 @@ function Bar(_ref) {
       columnNumber: 21
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavLink"], {
-    href: "/#/",
+    href: "javascript:;",
     onClick: logout,
     __self: this,
     __source: {
