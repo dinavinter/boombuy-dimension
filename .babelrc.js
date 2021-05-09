@@ -1,6 +1,4 @@
-const env = {
-  'process.env.BACKEND_URL': process.env.NODE_ENV === 'production' ? '/boombuy-dimension' : '',
-}
+const env = require('./env.config')
 
 module.exports = {
   presets: ['next/babel'],

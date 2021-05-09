@@ -9,7 +9,7 @@ module.exports = {
             '/': { page: '/' }
         }
     },
-    assetPrefix: debug ? '/boombuy-dimension/' : '',
+    assetPrefix: debug ?   '':  '/boombuy-dimension/',
  
     webpack: (config, {dev}) => {
         config.module.rules.push(

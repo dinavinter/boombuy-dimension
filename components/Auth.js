@@ -18,7 +18,7 @@ export function AuthScreen(props) {
 
 
     let closeScreen = ()=>  setActiveScreen(null);
-    let close =  <NavLink href="/#/" onClick={closeScreen}>Back</NavLink>
+    let close =  <NavLink  href="javascript:;"  onClick={closeScreen}>Back</NavLink>
 
 
     const openScreen = (screenDetails) => setActiveScreen(screenDetails);

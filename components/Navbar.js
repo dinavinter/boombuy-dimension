@@ -43,28 +43,28 @@ export function Bar({openScreen}) {
 
             <Nav className="mr-auto" navbar>
                 <NavItem>
-                    <NavLink href="/#/"># {accountEmail}</NavLink>
+                    <NavLink href="javascript:;"># {accountEmail}</NavLink>
                 </NavItem>
 
                 <NavItem>
-                     <NavLink  href="/#/" onClick={e=>openScreen(ScreenSets.Lite)}>Subscribe</NavLink>
+                     <NavLink  href="javascript:;" onClick={e=>openScreen(ScreenSets.Lite)}>Subscribe</NavLink>
                  </NavItem>
                 
                 <NavItem>
                     <NotAuthorizedView>
-                        <NavLink  href="/#/"  onClick={e=>openScreen(ScreenSets.Login)}>Login</NavLink>
+                        <NavLink  href="javascript:;"  onClick={e=>openScreen(ScreenSets.Login)}>Login</NavLink>
                     </NotAuthorizedView>
                 </NavItem>
 
                 <NavItem>
                     <AuthorizedView>
-                        <NavLink  href="/#/" onClick={e=>openScreen(ScreenSets.Profile)}>Profile</NavLink>
+                        <NavLink  href="javascript:;" onClick={e=>openScreen(ScreenSets.Profile)}>Profile</NavLink>
                     </AuthorizedView>
                 </NavItem>
 
                 <NavItem> 
                     <AuthorizedView> 
-                        <NavLink  href="/#/" onClick={logout}>Logout</NavLink> 
+                        <NavLink  href="javascript:;" onClick={logout}>Logout</NavLink> 
                     </AuthorizedView>
                 </NavItem>
 
