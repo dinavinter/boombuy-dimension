@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faGem from '@fortawesome/fontawesome-free-regular/faGem'
+import {Bar} from "./Navbar";
+import {AuthScreen} from "./Auth";
 
 const Header = (props) => (
     <header id="header" style={props.timeout ? {display: 'none'} : {}}>
@@ -8,11 +10,11 @@ const Header = (props) => (
             {/*<span className="icon fa-diamond"></span>*/}
             <FontAwesomeIcon icon={faGem} transform="grow-18" />
         </div>
+<AuthScreen />
         <div className="content">
             <div className="inner">
-                <h1>Dimension</h1>
-                <p>A fully responsive site template designed by <a href="https://html5up.net">HTML5 UP</a> and released<br />
-                for free under the <a href="https://html5up.net/license">Creative Commons</a> license.</p>
+                <h1>Boom Deal</h1>
+                <p>Hot deals all over the place </p>
             </div>
         </div>
         <nav>

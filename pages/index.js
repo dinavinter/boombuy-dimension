@@ -4,6 +4,9 @@ import stylesheet from 'styles/main.scss'
 import Header from "../components/Header"
 import Main from "../components/Main"
 import Footer from "../components/Footer"
+import {Bar} from "../components/Navbar";
+import {AuthScreen} from "../components/Auth";
+import {GigyaProvider} from "../gigya";
 
 class IndexPage extends React.Component {
     constructor(props) {
@@ -21,7 +24,7 @@ class IndexPage extends React.Component {
 
     componentDidMount() {
         this.timeoutId = setTimeout(() => {
-            this.setState({ loading: "" })
+            this.setState({loading: ""})
         }, 100)
     }
 
@@ -68,30 +71,35 @@ class IndexPage extends React.Component {
             })
         }, 350)
     }
+
     render() {
         return (
             <div className={`body ${this.state.loading} ${this.state.isArticleVisible ? "is-article-visible" : ""}`}>
                 <div>
                     <Head>
                         <title>Next.js Starter</title>
-                        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600,600i" rel="stylesheet" />
+                        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600,600i"
+                              rel="stylesheet"/>
+
                     </Head>
 
-                    <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
+                    <style dangerouslySetInnerHTML={{__html: stylesheet}}/>
+                    <GigyaProvider apiKey={"3_WKO1lFJ4yMz4MtnHK0d5AqgOCaU3KdYerHvETiMWD5IZ9qv5ccQmyC7qkICVchrQ"}
+                                   domain={"gigya.com"}>
+                        <div id="wrapper">
+                            <Header onOpenArticle={this.handleOpenArticle} timeout={this.state.timeout}/>
+                            <Main
+                                isArticleVisible={this.state.isArticleVisible}
+                                timeout={this.state.timeout}
+                                articleTimeout={this.state.articleTimeout}
+                                article={this.state.article}
+                                onCloseArticle={this.handleCloseArticle}
+                            />
+                            <Footer timeout={this.state.timeout}/>
+                        </div>
+                    </GigyaProvider>
+                    <div id="bg"/>
 
-                    <div id="wrapper">
-                        <Header onOpenArticle={this.handleOpenArticle} timeout={this.state.timeout} />
-                        <Main
-                            isArticleVisible={this.state.isArticleVisible}
-                            timeout={this.state.timeout}
-                            articleTimeout={this.state.articleTimeout}
-                            article={this.state.article}
-                            onCloseArticle={this.handleCloseArticle}
-                        />
-                        <Footer timeout={this.state.timeout} />
-                    </div>
-
-                    <div id="bg" />
                 </div>
             </div>
         )
