@@ -17,6 +17,7 @@ import {
     NavbarText
 } from 'reactstrap';
 import {AuthorizedView, NotAuthorizedView, ScreenSets, useGigya, useGigyaAuth} from "../gigya";
+import {useFido} from "../gigya/useGigyaAuth";
 
 const LinkButton = props => <button
     {...props}
@@ -35,8 +36,8 @@ const Logout = props => {
 
 export function Bar({openScreen}) {
     const {account, logout} = useGigyaAuth();
-    const gigya = useGigya();
-    const accountEmail = account && account.profile && account.profile.email;
+    const {login, register} = useFido();
+     const accountEmail = account && account.profile && account.profile.email;
     return (
         <Navbar color="light" light expand="md">
             <NavbarBrand href="/"> Id-Booom
@@ -59,12 +60,10 @@ export function Bar({openScreen}) {
 
                 <NavItem>
                     <AuthorizedView>
-                        <NavLink href="javascript:;" onClick={e => {
-                            gigya.accounts.auth.fido.register({callback: console.log});
-                        }}>Register Device</NavLink>
+                        <NavLink href="javascript:;" onClick={register}>Register Device</NavLink>
                     </AuthorizedView>
                 </NavItem>
-                
+
                 <NavItem>
                     <AuthorizedView>
                         <NavLink href="javascript:;" onClick={e => openScreen(ScreenSets.Profile)}>Profile</NavLink>
@@ -79,17 +78,13 @@ export function Bar({openScreen}) {
 
 
                 <NavItem>
-                    <NotAuthorizedView> 
-                        <NavLink href="javascript:;" onClick={e => {
-                            gigya.accounts.auth.fido.login({callback: console.log});
-                        }}>Fido Login</NavLink>
-                    </NotAuthorizedView> 
+                    <NotAuthorizedView>
+                        <NavLink href="javascript:;" onClick={login}>Fido Login</NavLink>
+                    </NotAuthorizedView>
                 </NavItem>
 
-               
 
             </Nav>
         </Navbar>
-    )
-        ;
+    ) ;
 }
