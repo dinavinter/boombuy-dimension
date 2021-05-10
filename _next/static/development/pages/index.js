@@ -969,12 +969,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
 /* harmony import */ var _gigya__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../gigya */ "./gigya/index.js");
+/* harmony import */ var _gigya_useGigyaAuth__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../gigya/useGigyaAuth */ "./gigya/useGigyaAuth.js");
 
 
 var _this = undefined,
     _jsxFileName = "D:\\dina\\demo\\boombuy-dimension\\components\\Navbar.js";
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 
 
 
@@ -989,7 +991,7 @@ var LinkButton = function LinkButton(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 22,
       columnNumber: 29
     }
   }), props.children);
@@ -1004,7 +1006,7 @@ var Logout = function Logout(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 33,
       columnNumber: 12
     }
   }), "Logout");
@@ -1017,7 +1019,10 @@ function Bar(_ref) {
       account = _useGigyaAuth2.account,
       logout = _useGigyaAuth2.logout;
 
-  var gigya = Object(_gigya__WEBPACK_IMPORTED_MODULE_4__["useGigya"])();
+  var _useFido = Object(_gigya_useGigyaAuth__WEBPACK_IMPORTED_MODULE_5__["useFido"])(),
+      login = _useFido.login,
+      register = _useFido.register;
+
   var accountEmail = account && account.profile && account.profile.email;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Navbar"], {
     color: "light",
@@ -1026,7 +1031,7 @@ function Bar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 42,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavbarBrand"], {
@@ -1034,7 +1039,7 @@ function Bar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 43,
       columnNumber: 13
     }
   }, " Id-Booom"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Nav"], {
@@ -1043,14 +1048,14 @@ function Bar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 46,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 47,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavLink"], {
@@ -1058,14 +1063,14 @@ function Bar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 48,
       columnNumber: 21
     }
   }, "# ", accountEmail)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 51,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavLink"], {
@@ -1076,21 +1081,21 @@ function Bar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 52,
       columnNumber: 21
     }
   }, "Subscribe")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 55,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_gigya__WEBPACK_IMPORTED_MODULE_4__["NotAuthorizedView"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 56,
       columnNumber: 21
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavLink"], {
@@ -1101,48 +1106,44 @@ function Bar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 57,
       columnNumber: 25
     }
   }, "Login"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 61,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_gigya__WEBPACK_IMPORTED_MODULE_4__["AuthorizedView"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 62,
       columnNumber: 21
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavLink"], {
     href: "javascript:;",
-    onClick: function onClick(e) {
-      gigya.accounts.auth.fido.register({
-        callback: console.log
-      });
-    },
+    onClick: register,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 63,
       columnNumber: 25
     }
   }, "Register Device"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 67,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_gigya__WEBPACK_IMPORTED_MODULE_4__["AuthorizedView"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 68,
       columnNumber: 21
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavLink"], {
@@ -1153,21 +1154,21 @@ function Bar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 69,
       columnNumber: 25
     }
   }, "Profile"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 73,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_gigya__WEBPACK_IMPORTED_MODULE_4__["AuthorizedView"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 74,
       columnNumber: 21
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavLink"], {
@@ -1176,34 +1177,30 @@ function Bar(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 75,
       columnNumber: 25
     }
   }, "Logout"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 80,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_gigya__WEBPACK_IMPORTED_MODULE_4__["NotAuthorizedView"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 81,
       columnNumber: 21
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavLink"], {
     href: "javascript:;",
-    onClick: function onClick(e) {
-      gigya.accounts.auth.fido.login({
-        callback: console.log
-      });
-    },
+    onClick: login,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 82,
       columnNumber: 25
     }
   }, "Fido Login")))));
@@ -1307,11 +1304,14 @@ var GigyaContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])({
 function useGigya() {
   var gigya = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(GigyaContext);
   if (gigya && gigya.socialize && gigya.accounts) return _objectSpread({}, gigya, {
-    logout: gigya.socialize.logout,
-    loginFido: gigya.accounts.auth.fido.login
+    socialize: gigya.socialize,
+    accounts: gigya.accounts
   });
   return {
-    isLoggedIn: false
+    isLoggedIn: false,
+    gigyaNotLoaded: function gigyaNotLoaded() {
+      return console.log("gigya is not loaded");
+    }
   };
 }
 
@@ -1647,12 +1647,13 @@ function StandaloneScreen(_ref3) {
 /*!*******************************!*\
   !*** ./gigya/useGigyaAuth.js ***!
   \*******************************/
-/*! exports provided: useGigyaAuth */
+/*! exports provided: useGigyaAuth, useFido */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useGigyaAuth", function() { return useGigyaAuth; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useFido", function() { return useFido; });
 /* harmony import */ var _context__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./context */ "./gigya/context.js");
 
 
@@ -1662,15 +1663,34 @@ function useGigyaAuth() {
       isLoggedIn = _useGigya.isLoggedIn,
       setIsLoggedIn = _useGigya.setIsLoggedIn,
       logout = _useGigya.logout,
-      account = _useGigya.account,
-      loginFido = _useGigya.loginFido;
+      account = _useGigya.account;
 
   return {
     isLoggedIn: isLoggedIn,
     setIsLoggedIn: setIsLoggedIn,
     logout: logout,
-    account: account,
-    loginFido: loginFido
+    account: account
+  };
+}
+function useFido() {
+  var _useGigya2 = Object(_context__WEBPACK_IMPORTED_MODULE_0__["useGigya"])(),
+      accounts = _useGigya2.accounts,
+      gigyaNotLoaded = _useGigya2.gigyaNotLoaded;
+
+  if (accounts) return {
+    login: function login(e) {
+      return accounts.auth.fido.login({
+        callback: console.log
+      });
+    },
+    register: function register(e) {
+      return accounts.auth.fido.register({
+        callback: console.log
+      });
+    }
+  };else return {
+    login: gigyaNotLoaded,
+    register: gigyaNotLoaded
   };
 }
 
