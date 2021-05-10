@@ -1,8 +1,8 @@
 import { useGigya} from "./context";
    
 export function useGigyaAuth( ) {
-    const {isLoggedIn, setIsLoggedIn, logout, account}= useGigya();
+    const {isLoggedIn, setIsLoggedIn, logout, account, loginFido}= useGigya();
 
-    return {isLoggedIn, setIsLoggedIn, logout, account}; 
+    return {isLoggedIn, setIsLoggedIn, logout, account, loginFido}; 
 }
  

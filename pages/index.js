@@ -80,7 +80,7 @@ class IndexPage extends React.Component {
                         <title>Next.js Starter</title>
                         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600,600i"
                               rel="stylesheet"/>
-
+                        {/*<base href={"/boombuy-dimension/"}/>*/}
                     </Head>
 
                     <style dangerouslySetInnerHTML={{__html: stylesheet}}/>

@@ -40,6 +40,7 @@ export function AuthScreen(props) {
                     {close}
                 </ScreenContainer>
             </article>
+            
         </div>
 
 

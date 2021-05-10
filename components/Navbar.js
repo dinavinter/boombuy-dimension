@@ -16,7 +16,7 @@ import {
     DropdownItem,
     NavbarText
 } from 'reactstrap';
-import {AuthorizedView, NotAuthorizedView, ScreenSets, useGigyaAuth} from "../gigya";
+import {AuthorizedView, NotAuthorizedView, ScreenSets, useGigya, useGigyaAuth} from "../gigya";
 
 const LinkButton = props => <button
     {...props}
@@ -35,7 +35,8 @@ const Logout = props => {
 
 export function Bar({openScreen}) {
     const {account, logout} = useGigyaAuth();
-    const accountEmail = account && account.profile &&account.profile.email;
+    const gigya = useGigya();
+    const accountEmail = account && account.profile && account.profile.email;
     return (
         <Navbar color="light" light expand="md">
             <NavbarBrand href="/"> Id-Booom
@@ -47,26 +48,45 @@ export function Bar({openScreen}) {
                 </NavItem>
 
                 <NavItem>
-                     <NavLink  href="javascript:;" onClick={e=>openScreen(ScreenSets.Lite)}>Subscribe</NavLink>
-                 </NavItem>
-                
+                    <NavLink href="javascript:;" onClick={e => openScreen(ScreenSets.Lite)}>Subscribe</NavLink>
+                </NavItem>
+
                 <NavItem>
                     <NotAuthorizedView>
-                        <NavLink  href="javascript:;"  onClick={e=>openScreen(ScreenSets.Login)}>Login</NavLink>
+                        <NavLink href="javascript:;" onClick={e => openScreen(ScreenSets.Login)}>Login</NavLink>
                     </NotAuthorizedView>
                 </NavItem>
 
                 <NavItem>
                     <AuthorizedView>
-                        <NavLink  href="javascript:;" onClick={e=>openScreen(ScreenSets.Profile)}>Profile</NavLink>
+                        <NavLink href="javascript:;" onClick={e => {
+                            gigya.accounts.auth.fido.register({callback: console.log});
+                        }}>Register Device</NavLink>
+                    </AuthorizedView>
+                </NavItem>
+                
+                <NavItem>
+                    <AuthorizedView>
+                        <NavLink href="javascript:;" onClick={e => openScreen(ScreenSets.Profile)}>Profile</NavLink>
                     </AuthorizedView>
                 </NavItem>
 
-                <NavItem> 
-                    <AuthorizedView> 
-                        <NavLink  href="javascript:;" onClick={logout}>Logout</NavLink> 
+                <NavItem>
+                    <AuthorizedView>
+                        <NavLink href="javascript:;" onClick={logout}>Logout</NavLink>
                     </AuthorizedView>
                 </NavItem>
+
+
+                <NavItem>
+                    <NotAuthorizedView> 
+                        <NavLink href="javascript:;" onClick={e => {
+                            gigya.accounts.auth.fido.login({callback: console.log});
+                        }}>Fido Login</NavLink>
+                    </NotAuthorizedView> 
+                </NavItem>
+
+               
 
             </Nav>
         </Navbar>
