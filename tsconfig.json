@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "target": "es5",
+        "module": "CommonJS",
+        "lib": [
+            "es5",
+            "dom",
+            "es2015.core",
+            "es2015.promise",
+            "es2015.collection"
+        ],
+        "noImplicitUseStrict": true,
+        "skipLibCheck": true,
+        "moduleResolution": "node",
+        "importHelpers": true,
+        "isolatedModules": false,
+        "allowJs": true,
+        "baseUrl": "./"
+    },
+    "include": [
+        "**/*.ts"
+    ]
+}

@@ -32,7 +32,7 @@ export function AuthScreen(props) {
                  style={activeScreen ? {display: 'flex'} : {display: 'none'}}>
 
             <article className={`${activeScreen ? 'active' : ''} ${activeScreen ? 'timeout' : ''}`}>
-                <ScreenContainer>
+                <ScreenContainer >
                     {activeScreen ? 
                             <Screen screenSet={activeScreen.screenSet} startScreen={activeScreen.startScreen}  onSubmit={closeScreen}/>
                         :

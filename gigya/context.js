@@ -1,5 +1,4 @@
 import { createContext, useContext } from 'react';
-export const AuthContext = createContext({isLoggedIn:false});
 
 export const GigyaContext = createContext({isLoggedIn:false});
 
